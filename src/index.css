@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 3D Dishes Animation */
+/* Add perspective to container for better 3D effect */
+.dishes-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: rotate 40s infinite linear;
+  perspective: 1000px; /* Adds depth */
+}
+
+/* Dish with gradient, subtle inner shadow, and highlight */
+.dish {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(145deg, #fefefe, #d6d6d6);
+  border-radius: 65% / 50%; /* elliptical shape for more natural look */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.15), /* soft outer shadow */
+    inset 0 5px 10px rgba(255, 255, 255, 0.8), /* highlight inside */
+    inset 0 -5px 10px rgba(0, 0, 0, 0.1); /* subtle inner shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect: slight scale and brighter highlight */
+.dish:hover {
+  transform: scale(1.15);
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.3),
+    inset 0 8px 15px rgba(255, 255, 255, 0.95),
+    inset 0 -8px 15px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+/* Dish logo with subtle drop shadow for depth */
+.dish-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: white;
+  padding: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Positioning dishes in 3D space */
+.dish-1 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateY(0deg) translateZ(180px);
+}
+
+.dish-2 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateY(72deg) translateZ(180px);
+}
+
+.dish-3 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateY(144deg) translateZ(180px);
+}
+
+.dish-4 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateY(216deg) translateZ(180px);
+}
+
+.dish-5 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateY(288deg) translateZ(180px);
+}
+
+/* Rotation animation */
+@keyframes rotate {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dishes-container {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .dish {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .dish-logo {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .dish-1, .dish-2, .dish-3, .dish-4, .dish-5 {
+    transform: translate(-50%, -50%) rotateY(var(--rotation)) translateZ(120px);
+  }
+}
