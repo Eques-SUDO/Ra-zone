@@ -3,29 +3,41 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        // Logo font - Matches PDF Harboro Soft Extra Bold style
+        'logo': ['Poppins', 'Rubik', 'Montserrat', 'sans-serif'],
+        // Primary font - Alt Carbonized (using Bebas Neue as web alternative)
+        'primary': ['Bebas Neue', 'Oswald', 'sans-serif'],
+        // Secondary font - Helvetica LT Pro
+        'secondary': ['Helvetica LT Pro', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+        // Additional font options
+        'display': ['Bebas Neue', 'sans-serif'],
+        'body': ['Helvetica LT Pro', 'Helvetica Neue', 'Arial', 'sans-serif'],
+      },
       colors: {
-        primary: '#C9A554', // Rich gold inspired by Egyptian artifacts
-        secondary: '#2A4365', // Deep royal blue
-        accent: {
-          1: '#D4AF37', // Bright gold
-          2: '#794E9B', // Royal purple
-          3: '#1F4E5F', // Deep teal
+        // RAZONE Brand Colors from PDF Charter
+        primary: '#3B0510', // Black Bean - Main brand color
+        secondary: '#2A181A', // Licorice - Secondary dark
+        accent: '#F4F4F1', // White Smoke - Light accent
+
+        // Brand palette
+        razone: {
+          'black-bean': '#3B0510',
+          'licorice': '#2A181A',
+          'white-smoke': '#F4F4F1',
+          'night': '#131313',
+          'antique-white': '#F5EADA',
         },
-        sand: {
-          50: '#FAF6F0',
-          100: '#F5EDE1',
-          200: '#EBD9C4',
-          300: '#E0C4A7',
-          400: '#D6AF8A',
-          500: '#CB9A6D',
+
+        // Semantic colors based on brand
+        dark: {
+          primary: '#3B0510',
+          secondary: '#2A181A',
+          tertiary: '#131313',
         },
-        night: {
-          50: '#E8EAF2',
-          100: '#D1D6E5',
-          200: '#A3ACCA',
-          300: '#7583B0',
-          400: '#475995',
-          500: '#19307B',
+        light: {
+          primary: '#F4F4F1',
+          secondary: '#F5EADA',
         },
       },
       backgroundImage: {

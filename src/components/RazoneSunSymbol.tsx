@@ -1,0 +1,59 @@
+import React from 'react';
+
+interface RazoneSunSymbolProps {
+  size?: number;
+  color?: string;
+  className?: string;
+}
+
+const RazoneSunSymbol: React.FC<RazoneSunSymbolProps> = ({
+  size = 40,
+  color = "#000000",
+  className = ""
+}) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 100 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      {/* Center circle */}
+      <circle cx="50" cy="50" r="15" fill={color} />
+
+      {/* Sun rays - matching PDF design */}
+      <g transform="translate(50, 50)">
+        {/* Top ray */}
+        <rect x="-2" y="-35" width="4" height="12" fill={color} />
+        {/* Top-right ray */}
+        <rect x="18" y="-28" width="4" height="12" fill={color} transform="rotate(45 20 -22)" />
+        {/* Right ray */}
+        <rect x="23" y="-2" width="12" height="4" fill={color} />
+        {/* Bottom-right ray */}
+        <rect x="18" y="18" width="4" height="12" fill={color} transform="rotate(-45 20 22)" />
+        {/* Bottom ray */}
+        <rect x="-2" y="23" width="4" height="12" fill={color} />
+        {/* Bottom-left ray */}
+        <rect x="-28" y="18" width="4" height="12" fill={color} transform="rotate(45 -26 22)" />
+        {/* Left ray */}
+        <rect x="-35" y="-2" width="12" height="4" fill={color} />
+        {/* Top-left ray */}
+        <rect x="-28" y="-28" width="4" height="12" fill={color} transform="rotate(-45 -26 -22)" />
+
+        {/* Additional rays for full sun effect */}
+        <rect x="9" y="-33" width="3" height="10" fill={color} transform="rotate(22.5 10.5 -28)" />
+        <rect x="-12" y="-33" width="3" height="10" fill={color} transform="rotate(-22.5 -10.5 -28)" />
+        <rect x="30" y="9" width="10" height="3" fill={color} transform="rotate(22.5 35 10.5)" />
+        <rect x="30" y="-12" width="10" height="3" fill={color} transform="rotate(-22.5 35 -10.5)" />
+        <rect x="9" y="23" width="3" height="10" fill={color} transform="rotate(-22.5 10.5 28)" />
+        <rect x="-12" y="23" width="3" height="10" fill={color} transform="rotate(22.5 -10.5 28)" />
+        <rect x="-40" y="9" width="10" height="3" fill={color} transform="rotate(-22.5 -35 10.5)" />
+        <rect x="-40" y="-12" width="10" height="3" fill={color} transform="rotate(22.5 -35 -10.5)" />
+      </g>
+    </svg>
+  );
+};
+
+export default RazoneSunSymbol;

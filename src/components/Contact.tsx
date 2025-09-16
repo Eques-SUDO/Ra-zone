@@ -1,97 +1,141 @@
-import React, { useState } from 'react';
-import { Mail, Phone, Instagram, Linkedin, MapPin } from 'lucide-react';
+import React from 'react';
+import { AnimatedSection } from '../hooks/useScrollAnimation';
 
 const Contact = () => {
-  const handleEmailClick = () => {
-    window.location.href = 'mailto:Ra-zone@marnovagroup.ma?subject=Demande d\'information - Ra-Zone Agency';
-  };
 
   return (
-    <section id="contact" className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-sand from-sand-50 via-night-50/5 to-sand-100"></div>
-      <div className="absolute inset-0 bg-gradient-radial from-accent-1/5 to-transparent"></div>
+    <section id="contact" className="py-32 relative overflow-hidden" style={{ backgroundColor: '#F5EADA' }}>
+      {/* Enhanced artistic background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-0 w-96 h-3 opacity-20 transform -rotate-12 animate-gentle-float" style={{ backgroundColor: '#3B0510' }}></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full opacity-8 animate-subtle-pulse" style={{ backgroundColor: '#2A181A', transform: 'translate(30%, 30%)' }}></div>
+        <div className="absolute top-1/3 right-1/4 w-8 h-8 rounded-full opacity-15 animate-gentle-float" style={{ backgroundColor: '#3B0510', animationDelay: '1s' }}></div>
+        <div className="absolute bottom-1/3 left-1/3 w-40 h-2 opacity-12 transform rotate-45 animate-subtle-pulse" style={{ backgroundColor: '#2A181A', animationDelay: '2s' }}></div>
+        <div className="absolute top-20 left-1/2 w-4 h-32 opacity-8 transform -rotate-45" style={{ backgroundColor: '#3B0510' }}></div>
+        <div className="absolute bottom-20 right-1/4 w-24 h-24 rounded-full opacity-6" style={{ backgroundColor: '#F4F4F1' }}></div>
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Contactez-nous
+        <AnimatedSection animation="animate-fade-in-up" className="text-center mb-20 relative z-10">
+          <h2 className="text-5xl md:text-7xl font-primary font-bold mb-8" style={{ color: '#3B0510', letterSpacing: '0.02em' }}>
+            CONTACTEZ-NOUS
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <div className="w-32 h-1 mx-auto mb-8 animate-subtle-pulse" style={{ backgroundColor: '#3B0510' }}></div>
+          <p className="text-xl md:text-2xl font-secondary max-w-3xl mx-auto leading-relaxed" style={{ color: '#2A181A' }}>
             Envie de donner vie à vos idées ? Parlons de votre projet créatif !
           </p>
-        </div>
+        </AnimatedSection>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">
-              Informations de Contact
-            </h3>
-            
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
-                  <Mail className="text-primary" size={24} />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Email</h4>
-                  <p className="text-gray-600">Ra-zone@marnovagroup.ma</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
-                  <Phone className="text-secondary" size={24} />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Téléphone</h4>
-                  <p className="text-gray-600">+212 665331087</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <MapPin className="text-blue-500" size={24} />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Localisation</h4>
-                  <p className="text-gray-600">Maroc</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div>
-            <div className="mt-8">
-              <h4 className="font-semibold text-gray-900 mb-4">Suivez-nous</h4>
-              <div className="flex space-x-4">
-                <a 
-                  href="https://instagram.com/wefeed.agency" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-pink-500 rounded-lg flex items-center justify-center text-white hover:bg-pink-600 transition-colors duration-200"
-                >
-                  <Instagram size={20} />
-                </a>
-                <a 
-                  href="https://linkedin.com/company/wefeed-agency" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white hover:bg-blue-700 transition-colors duration-200"
-                >
-                  <Linkedin size={20} />
-                </a>
-              </div>
-            </div>
-          </div>
-          
-          <div className="text-center mt-12">
-            <button
-              onClick={handleEmailClick}
-              className="bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-200 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 mx-auto"
+        <div className="max-w-4xl mx-auto relative z-10">
+          <AnimatedSection animation="animate-fade-in-up" delay={400}>
+            <div
+              className="p-10 rounded-2xl shadow-2xl backdrop-blur-sm relative overflow-hidden"
+              style={{ backgroundColor: 'rgba(244, 244, 241, 0.9)', border: '2px solid rgba(59, 5, 16, 0.1)' }}
             >
-              <Mail size={20} />
-              <span>Nous contacter par email</span>
-            </button>
-          </div>
+              {/* Decorative elements */}
+              <div className="absolute top-0 right-0 w-20 h-20 rounded-full opacity-10" style={{ backgroundColor: '#3B0510', transform: 'translate(50%, -50%)' }}></div>
+              <div className="absolute bottom-0 left-0 w-16 h-16 rounded-full opacity-8" style={{ backgroundColor: '#2A181A', transform: 'translate(-50%, 50%)' }}></div>
+
+              <div className="relative z-10">
+                <h3 className="text-3xl md:text-4xl font-primary font-bold mb-8 text-center" style={{ color: '#3B0510' }}>
+                  CONTACTEZ-NOUS
+                </h3>
+                <div className="w-24 h-1 mx-auto mb-10" style={{ backgroundColor: '#3B0510' }}></div>
+
+                <form className="space-y-6">
+                  <div>
+                    <label className="block font-secondary font-semibold text-lg mb-2" style={{ color: '#2A181A' }}>
+                      Nom *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      className="w-full px-4 py-3 rounded-xl border-2 transition-all duration-300 focus:outline-none focus:border-opacity-100"
+                      style={{
+                        borderColor: 'rgba(59, 5, 16, 0.3)',
+                        backgroundColor: 'rgba(244, 244, 241, 0.8)'
+                      }}
+                      onFocus={(e) => {
+                        e.currentTarget.style.borderColor = '#3B0510';
+                        e.currentTarget.style.backgroundColor = '#F4F4F1';
+                      }}
+                      onBlur={(e) => {
+                        e.currentTarget.style.borderColor = 'rgba(59, 5, 16, 0.3)';
+                        e.currentTarget.style.backgroundColor = 'rgba(244, 244, 241, 0.8)';
+                      }}
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block font-secondary font-semibold text-lg mb-2" style={{ color: '#2A181A' }}>
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      className="w-full px-4 py-3 rounded-xl border-2 transition-all duration-300 focus:outline-none focus:border-opacity-100"
+                      style={{
+                        borderColor: 'rgba(59, 5, 16, 0.3)',
+                        backgroundColor: 'rgba(244, 244, 241, 0.8)'
+                      }}
+                      onFocus={(e) => {
+                        e.currentTarget.style.borderColor = '#3B0510';
+                        e.currentTarget.style.backgroundColor = '#F4F4F1';
+                      }}
+                      onBlur={(e) => {
+                        e.currentTarget.style.borderColor = 'rgba(59, 5, 16, 0.3)';
+                        e.currentTarget.style.backgroundColor = 'rgba(244, 244, 241, 0.8)';
+                      }}
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block font-secondary font-semibold text-lg mb-2" style={{ color: '#2A181A' }}>
+                      Message *
+                    </label>
+                    <textarea
+                      required
+                      rows={6}
+                      className="w-full px-4 py-3 rounded-xl border-2 transition-all duration-300 focus:outline-none focus:border-opacity-100 resize-none"
+                      style={{
+                        borderColor: 'rgba(59, 5, 16, 0.3)',
+                        backgroundColor: 'rgba(244, 244, 241, 0.8)'
+                      }}
+                      onFocus={(e) => {
+                        e.currentTarget.style.borderColor = '#3B0510';
+                        e.currentTarget.style.backgroundColor = '#F4F4F1';
+                      }}
+                      onBlur={(e) => {
+                        e.currentTarget.style.borderColor = 'rgba(59, 5, 16, 0.3)';
+                        e.currentTarget.style.backgroundColor = 'rgba(244, 244, 241, 0.8)';
+                      }}
+                    ></textarea>
+                  </div>
+
+                  <div className="text-center pt-4">
+                    <button
+                      type="submit"
+                      className="px-8 py-4 font-secondary font-bold text-lg transition-all duration-700 transform hover:scale-105 hover-lift rounded-xl shadow-lg hover:shadow-2xl"
+                      style={{
+                        backgroundColor: '#3B0510',
+                        color: '#F4F4F1',
+                        letterSpacing: '0.05em'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = '#2A181A';
+                        e.currentTarget.style.transform = 'scale(1.05) translateY(-2px)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = '#3B0510';
+                        e.currentTarget.style.transform = 'scale(1) translateY(0)';
+                      }}
+                    >
+                      ENVOYER LE MESSAGE
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </AnimatedSection>
         </div>
       </div>
     </section>
